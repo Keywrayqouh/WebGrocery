@@ -1,0 +1,183 @@
+body {
+			background-color: silver;
+		}
+
+		.container {
+			max-width: 1100px;
+			padding: 20px;
+		}
+
+		.form-control {
+			width: 200px;
+		}
+
+		.center {
+			font-size: 15px;
+		}
+
+		#left {
+			
+			margin-top: 20px;
+			width: 60%;
+			
+			margin-left: 20%;
+			margin-right:20%;
+		
+			box-shadow: -1px 1px 8px 6px #8888;
+		}
+
+		#First {
+			margin-top: 10px;
+    		margin-left: 352px;
+		}
+
+		h1 {
+			color: white;
+			text-shadow: 2px 2px 4px #000000;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
+
+		table {
+			margin-top: -8px;
+			width: 70% !important;
+			background: white !important;
+			margin-left:15%;
+			margin-right: 15%;
+		}
+
+		#title {
+			background-color: white;
+			border: 1px solid white;
+			padding: 20px;
+			float:right;
+			margin-right:500px;
+			margin-top:24px;
+			
+		}
+
+		#updateForm {
+			background-color: black;
+			border: 1px solid white;
+			padding: 20px;
+			margin-top: -356px;
+			margin-left: 550px;
+			margin-right: 550px;
+			
+			box-shadow: -1px 1px 8px 6px #8888;
+		}
+		#TableGrocery{
+			margin-top: -43px;
+			
+		}
+		.btnAdd{
+			-webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  background-color:cornflowerblue;
+  padding: 10px 24px;
+  font-size:20px;
+  font-family: serif;
+
+			}
+			.btnAdd:hover {
+  background-color: #4CAF50; /* Green */
+  color: rgb(255, 255, 255);
+} /* Green */	
+		.addItem{
+			
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+
+.addItem:hover {background-color: #3e618e}
+
+.addItem:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.view{
+			
+			display: inline-block;
+			padding: 15px 25px;
+			font-size: 24px;
+			cursor: pointer;
+			text-align: center;
+			text-decoration: none;
+			outline: none;
+			color: #fff;
+			background-color: #4CAF50;
+			border: none;
+			border-radius: 15px;
+			box-shadow: 0 9px #999;
+		  }
+		  
+		  
+		  .view:hover {background-color: #3e4a8e}
+		  
+		  .view:active {
+			background-color: #3e4a8e;
+			box-shadow: 0 5px #666;
+			transform: translateY(4px);
+		  }
+	
+		
+		.update{
+			background-color: coral;
+			border-radius: 50%;
+			width:40%
+		}
+		.btnDel{
+			background-color: darkcyan;
+			border-radius: 50%;
+			width:40%;
+			
+		}
+		h1{
+			font-size: 50%;
+			text-align: center;
+			color:#3e618e;
+		
+			
+   font: bold 130px Helvetica, Arial, Sans-Serif;
+   text-shadow: 1px 1px #026ffe, 
+                2px 2px #fe4902, 
+                3px 3px #fe4902;
+   -webkit-transition: all 0.12s ease-out;
+   -moz-transition:    all 0.12s ease-out;
+   -ms-transition:     all 0.12s ease-out;
+   -o-transition:      all 0.12s ease-out;}
+   h1:hover {
+   position: relative; 
+   top: -3px; 
+   left: -3px; 
+   text-shadow: 1px 1px #0213fe, 
+                2px 2px #0213fe, 
+                3px 3px #0213fe, 
+                4px 4px #0213fe, 
+                5px 5px #0213fe, 
+                6px 6px #0213fe;
+}
+		h3{
+			font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+			font-size: 60px;
+			color:brown
+		}
+		#item,#itemQ,#itemP{
+			font-size:20px;
+			font-family:monospace;
+			color:hotpink
+		}
+		.th{
+			color: #3e4a8e
+		}

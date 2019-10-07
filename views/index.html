@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Mongoose</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/x-icon" href="https://image.flaticon.com/icons/svg/25/25619.svg" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	 crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	 crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="/static/js/usersRequests.js"></script>
+	<!-- <script src="/static/js/postrequest.js"></script> -->
+	<style>
+		body {
+			background-image:url("https://news.harvard.edu/wp-content/uploads/2019/04/Grocery_Store_Aisle_iStock-961081004_2500.jpg?w=1200&h=800&crop=1");
+			background-size:cover;
+			background-repeat: no-repeat;
+			}
+
+		.container {
+			max-width: 1100px;
+			padding: 20px;
+		}
+
+		.form-control {
+			width: 200px;
+		}
+
+		.center {
+			font-size: 15px;
+		}
+
+		#left {
+			
+			margin-top: 20px;
+			width: 60%;
+			background-color:hsla(290,60%,70%,0.3);
+			
+			margin-left: 20%;
+			margin-right:20%;
+		
+			box-shadow: -1px 1px 8px 6px #8888;
+		}
+
+		#First {
+			margin-top: 10px;
+    		margin-left: 352px;
+		}
+
+		h1 {
+			color: white;
+			text-shadow: 2px 2px 4px #000000;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
+
+		table {
+			margin-top: -8px;
+			width: 80% !important;
+			margin-left:10%;
+			margin-right: 10%;
+			background-color:hsla(290,100%,50%,0.3);
+		}
+
+		#title {
+			background-color: white;
+			border: 1px solid white;
+			padding: 20px;
+			float:right;
+			margin-right:500px;
+			margin-top:24px;
+			
+		}
+
+		#updateForm {
+			background-color: black;
+			border: 1px solid white;
+			padding: 20px;
+			margin-top: -356px;
+			margin-left: 550px;
+			margin-right: 550px;
+			
+			box-shadow: -1px 1px 8px 6px #8888;
+		}
+		#TableGrocery{
+			margin-top: -43px;
+			
+			
+		}
+		.btnAdd{
+			-webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  background-color:cornflowerblue;
+  padding: 10px 24px;
+  font-size:20px;
+  font-family: serif;
+
+			}
+			.btnAdd:hover {
+  background-color: #4CAF50; /* Green */
+  color: rgb(255, 255, 255);
+} /* Green */	
+		.addItem{
+			
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+
+.addItem:hover {background-color: #3e618e}
+
+.addItem:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.view{
+			
+			display: inline-block;
+			padding: 15px 25px;
+			font-size: 24px;
+			cursor: pointer;
+			text-align: center;
+			text-decoration: none;
+			outline: none;
+			color: #fff;
+			background-color: #4CAF50;
+			border: none;
+			border-radius: 15px;
+			box-shadow: 0 9px #999;
+		  }
+		  
+		  
+		  .view:hover {background-color: #3e4a8e}
+		  
+		  .view:active {
+			background-color: #3e4a8e;
+			box-shadow: 0 5px #666;
+			transform: translateY(4px);
+		  }
+	
+		
+		.update{
+			background-color: coral;
+			border-radius: 50%;
+			width:40%
+		}
+		.btnDel{
+			background-color: darkcyan;
+			border-radius: 50%;
+			width:40%;
+			
+		}
+		h1{
+			font-size: 50%;
+			text-align: center;
+			color:#3e618e;
+		
+			
+   font: bold 130px Helvetica, Arial, Sans-Serif;
+   text-shadow: 1px 1px #026ffe, 
+                2px 2px #fe4902, 
+                3px 3px #fe4902;
+   -webkit-transition: all 0.12s ease-out;
+   -moz-transition:    all 0.12s ease-out;
+   -ms-transition:     all 0.12s ease-out;
+   -o-transition:      all 0.12s ease-out;}
+   h1:hover {
+   position: relative; 
+   top: -3px; 
+   left: -3px; 
+   text-shadow: 1px 1px #0213fe, 
+                2px 2px #0213fe, 
+                3px 3px #0213fe, 
+                4px 4px #0213fe, 
+                5px 5px #0213fe, 
+                6px 6px #0213fe;
+}
+		h3{
+			font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+			font-size: 60px;
+			color:brown
+		}
+		#item,#itemQ,#itemP{
+			font-size:20px;
+			font-family:monospace;
+			color:hotpink
+		}
+		.th{
+			color: #3e4a8e
+		}
+		
+	</style>
+</head>
+
+<body>
+	<div>
+		<h1>WELCOME</h1>
+	</div>
+	<div id="First">
+		<center>
+
+		<button type="button" class="addItem" id="add">Add Item</button>
+		<button type="button" class="view" id="viewTab">View Table</button>
+	</center>
+	</div>
+	<center>
+		<div id="left">
+			<div class="container">
+				<div class="col-sm-5">
+					<h3>Add Item</h3>
+					<br>
+					<div>
+						<div id="userForm">
+							<div class="form-group">
+								<label for="name" id="item">Item Name:</label>
+								<input type="text" class="form-control" id="name" placeholder="Enter Item Name" />
+							</div>
+							<div class="form-group">
+								<label for="quantity" id="itemQ">Item Quantity:</label>
+								<input type="number" class="form-control" id="quantity" placeholder="Enter Item Quantity" />
+							</div>
+							<div class="form-group">
+								<label for="priority" id="itemP">Item Priority:</label>
+								<input type="number" class="form-control" id="priority" placeholder="Enter 1-3 " />
+							</div>
+							<button type="submit" class="btnAdd" id="btnAdd">Add Item</button>
+						</div>
+					</div>
+
+					<div id="postResultDiv">
+					</div>
+					<br>
+				</div>
+			</div>
+		</div><br><br><br>
+		<div id="TableGrocery">
+			<!-- <h1 id="title">Grocery List</h1> -->
+			<table class="table">
+				<thead class="thead-dark">
+					<tr>
+						<th   id="thName" scope="col">Item Name</th>
+						<th  id="thQuantity" scope="col">Item Quantity</th>
+						<th  id="thPriority" scope="col">Item Priority</th>
+						<th id="thActions" scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</center>
+	<!-- Modal -->
+	<div id="modal">
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+		 aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Update Item</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<span>Item</span><input type="text" class="form-control" id="updateName" placeholder="Enter Item Name">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="updateQuan" placeholder="Enter Item Quantity">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="updatePrio" placeholder="Enter Item Priority">
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="" data-dismiss="modal">Close</button>
+						<button type="button" class="btnUp" data-dismiss="modal" id="btnUpdated">Update Item</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	$(document).ready(function () {
+		$('#left').hide();
+		$('#TableGrocery').hide()
+		$('#viewTab').click(function () {
+			$('#First').show();
+			$('#left').hide();
+			$('#TableGrocery').show()
+			$('#btnAdd').click(function () {
+				$('#left').hide();
+				$('#First').show()
+				$('#TableGrocery').show()
+
+			});
+		})
+
+		$('#add').click(function () {
+			$('#First').show();
+			$('#left').show();
+			$('#TableGrocery').hide()
+			$('#btnAdd').click(function () {
+				$('#left').hide();
+				$('#First').show()
+				$('#TableGrocery').show()
+
+			});
+		})
+
+	})
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+</html>
