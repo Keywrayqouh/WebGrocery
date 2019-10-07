@@ -18,7 +18,7 @@ $(document).ready(function () {
     function addRow(item) {
         var tr = $("<tr>")
         var btns = $("<div>").append($("<button>", {
-            class: "update",
+            class: "btnUpdate",
             "data-toggle": "modal",
             "data-target": '#exampleModal',
             id: "update_" + item._id,
@@ -45,7 +45,7 @@ $(document).ready(function () {
             quan: $("#quantity").val(),
             prio: $("#priority").val()
         }
-        var id = $(this).attr('id').split(' ');
+        var id = $(this).attr('id').split('_');
         $.ajax({
             url: "/item/delete/" + id[1],
             data: formData,
@@ -58,9 +58,9 @@ $(document).ready(function () {
         });
     })
     $("#btnAdd").click(function () {
-        // var validName = $('#name').val();
-        // var validNumber = $('#quantity').val()
-        // var validPrio = $('#priority').val()
+        var validName = $('#name').val();
+        var validNumber = $('#quantity').val()
+        var validPrio = $('#priority').val()
         var valid = true;
         $('.form-control').each(function () {
             if (!$("#name").val()) {
@@ -129,20 +129,31 @@ $(document).ready(function () {
     })
 
 
-    $(document).on("click", ".update", function () {
-        var id = $(this).attr('id').split('_')
-        $('#btnUp').click(function () {
+    $(document).on("click", ".btnUpdate", function () {
+        $('#up').show();
+        $('#TableGrocery').hide();
+        var id = $(this).attr('id').split('')
+        $('#btnUpdated').click(function () {
             var formData = {
-                name: $("#name").val(),
-                quan: $("#quantity").val(),
-                prio: $("#priority").val()
+                name: $("#name1").val(),
+                quan: $("#quantity1").val(),
+                prio: $("#priority1").val()
             }
+            console.log(formData);
             $.ajax({
                 url: "/item/update/" + id[1],
                 data: formData,
                 success: function (result) {
-                    retrieveItems();
-                    console.log('Success!!')
+                   
+                   
+                    console.log('Updated!!');
+                    retrieveItems(formData);
+                    $('#up').hide();
+                    $('#TableGrocery').show();
+                    console.log('Updated!!');
+                    
+                    
+
                 },
                 error: function (e) {
                     console.log("ERROR: ", e);
